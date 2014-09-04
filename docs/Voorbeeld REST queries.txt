@@ -1,0 +1,15 @@
+Events :
+
+https://insight.ettu.nl/_api/search/query?querytemplate='contenttype:event'
+
+Gebruikers beginnend met een P
+
+https://insight.ettu.nl/_api/web/siteusers?$select=Id,Title&$filter=startswith(Title,'P')
+
+Nieuws
+
+https://insight.ettu.nl/_api/search/query?querytemplate='contenttype:nieuws'
+
+Zoeken op nieuws
+maar dan op alle overervend contenttypeid's
+https://insight.ettu.nl/_api/search/query?querytemplate='contenttypeid:0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF390102*'
