@@ -1,0 +1,5 @@
+cd C:\app\nl.ettu.demoapp
+
+adb -d install platforms/android/ant-build/nlettudemoapp-debug.apk
+
+adb -d install platforms/android/ant-build/nlettudemoapp-release-unsigned.apk
