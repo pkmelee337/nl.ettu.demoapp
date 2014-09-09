@@ -3,14 +3,16 @@ angular.module('starter.services', [])
 .factory('Dash', function() {
     var testVar = "testdata";
 
-    var webData = getWebData("AllProperties");
-    console.log(webData);
+    // var webData = getWebData("AllProperties");
+    // console.log(webData);
+
+    startSharePointScript();
 
     return {
         test: function() {
             return testVar;
         }
-    }
+    };
 })
 
 /**
@@ -35,5 +37,5 @@ angular.module('starter.services', [])
       // Simple index lookup
       return friends[friendId];
     }
-  }
+  };
 });

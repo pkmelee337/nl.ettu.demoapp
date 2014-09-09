@@ -75,9 +75,12 @@ function getToken()
             
             var xmlDoc = $.parseXML(result);
             var xml = $(xmlDoc);
-            token = xml.find("wsse\\:BinarySecurityToken").text();
+            console.log(xml.text());
 
-            console.log("Token: " + token);
+            //token = $(result.responseText).find("wsse\\:BinarySecurityToken").text();
+            //token = xml.find("wsse\\:BinarySecurityToken").text();
+            token = xml.find("BinarySecurityToken").text();
+            console.log("Token", token);
             getFedAuthCookies();
         },
         error: function (result, textStatus, errorThrown) {
@@ -93,11 +96,9 @@ function getFedAuthCookies()
     $.ajax({
         type: 'POST',
         data: token,
-        dataType: 'text',
-        //crossDomain: true, // had no effect, see support.cors above
-        //contentType: 'application/x-www-form-urlencoded',
+        crossDomain: true, // had no effect, see support.cors above
+        contentType: 'application/x-www-form-urlencoded',
         url: loginUrl,
-        headers: { Accept: "application/x-www-form-urlencoded" },
         // dataType: 'html', // default is OK: Intelligent Guess (xml, json, script, or html)
         success: function (data, textStatus, result) {
             // we should update the digest
