@@ -6,7 +6,7 @@ angular.module('starter.services', [])
     // var webData = getWebData("AllProperties");
     // console.log(webData);
 
-    startSharePointScript();
+    
 
     return {
         test: function() {
